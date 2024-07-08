@@ -5,7 +5,7 @@ pyrofork==1.0.7
 tgcrypto<=1.2.3
 aiohttp<=3.8.1
 python-dotenv<=0.20.0
-motor
+motor==3.5.0
 aiofiles
 dnspython
 apscheduler
