@@ -1,7 +1,7 @@
 pyrogram==2.0.106
 motor==3.5.0
 pymongo==4.5.0
-pyrofork==<compatible version>
+pyrofork==1.0.7
 tgcrypto<=1.2.3
 aiohttp<=3.8.1
 python-dotenv<=0.20.0
