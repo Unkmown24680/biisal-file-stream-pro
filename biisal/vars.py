@@ -39,7 +39,7 @@ class Var(object):
     HAS_SSL = bool(getenv('HAS_SSL', True))
 
     if HAS_SSL:
-        URL = f"https://{FQDN}"
+        URL = f"http://{FQDN}"
     else:
         URL = f"http://{FQDN}"
 
