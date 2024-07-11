@@ -1,13 +1,10 @@
-
-
-
-
 pyrogram==2.0.106
 pyrofork==2.2.11
+motor==3.5.0
+pymongo==4.5.0
 tgcrypto<=1.2.3
 aiohttp<=3.8.1
 python-dotenv<=0.20.0
-motor
 aiofiles
 dnspython
 apscheduler
