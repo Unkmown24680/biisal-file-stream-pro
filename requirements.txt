@@ -1,9 +1,12 @@
+
+
+
 pyrogram==2.0.106
-motor==3.5.0
-pymongo==4.5.0
+pyrofork==2.2.11
 tgcrypto<=1.2.3
 aiohttp<=3.8.1
 python-dotenv<=0.20.0
+motor==3.5.0
 aiofiles
 dnspython
 apscheduler
@@ -14,6 +17,3 @@ colorama
 jinja2
 Flask<= 3.0.0
 gunicorn<= 21.2.0
-
-
-
