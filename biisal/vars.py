@@ -14,7 +14,7 @@ class Var(object):
     MULTI_CLIENT = False
     API_ID = int(getenv('API_ID', '22179988'))
     API_HASH = str(getenv('API_HASH', 'dae4b28e14b51583475a8def6ca06934'))
-    BOT_TOKEN = str(getenv('BOT_TOKEN' , '6946565200:AAEL7v1oEtMVHC5Ml1YEijDXa8CQultTFow'))
+    BOT_TOKEN = str(getenv('BOT_TOKEN', '6946565200:AAEL7v1oEtMVHC5Ml1YEijDXa8CQultTFow'))
     name = str(getenv('name', 'file_stream_pro_bot'))
     SLEEP_THRESHOLD = int(getenv('SLEEP_THRESHOLD', '60'))
     WORKERS = int(getenv('WORKERS', '4'))
@@ -27,20 +27,24 @@ class Var(object):
     NO_PORT = bool(getenv('NO_PORT', False))
     APP_NAME = None
     OWNER_USERNAME = str(getenv('OWNER_USERNAME', 'unknown_0501'))
+    
     if 'DYNO' in environ:
         ON_HEROKU = True
-        APP_NAME = str(getenv('APP_NAME')) #dont need to fill anything here
-    
+        APP_NAME = str(getenv('APP_NAME'))  # No need to fill anything here
     else:
         ON_HEROKU = False
-    FQDN = str(getenv('FQDN', 'BIND_ADRESS:PORT')) if not ON_HEROKU or getenv('FQDN', '159.223.40.206:80') else APP_NAME+'.herokuapp.com'
-    HAS_SSL=bool(getenv('HAS_SSL',True))
+
+    # Directly using IP address
+    FQDN = "159.223.40.206:8080" if not ON_HEROKU else f"{APP_NAME}.herokuapp.com"
+    HAS_SSL = bool(getenv('HAS_SSL', True))
+
     if HAS_SSL:
-        URL = "http://{159.223.40.206:80}/".format(FQDN)
+        URL = f"https://{FQDN}"
     else:
-        URL = "https://{159.223.40.206:80}/".format(FQDN)
+        URL = f"http://{FQDN}"
+
     DATABASE_URL = str(getenv('DATABASE_URL', 'mongodb+srv://wiciya3691:IUmgECrTO5ZGIzP9@cluster0.uu8csuf.mongodb.net/?retryWrites=true&w=majority'))
-    UPDATES_CHANNEL = str(getenv('UPDATES_CHANNEL', 'movierulzking')) 
-    BANNED_CHANNELS = list(set(int(x) for x in str(getenv("BANNED_CHANNELS", "")).split()))   
-    BAN_CHNL = list(set(int(x) for x in str(getenv("BAN_CHNL", "")).split()))   
-    BAN_ALERT = str(getenv('BAN_ALERT' , '<b>ʏᴏᴜʀ ᴀʀᴇ ʙᴀɴɴᴇᴅ ᴛᴏ ᴜsᴇ ᴛʜɪs ʙᴏᴛ.Pʟᴇᴀsᴇ ᴄᴏɴᴛᴀᴄᴛ @bmw_contact_bot ᴛᴏ ʀᴇsᴏʟᴠᴇ ᴛʜᴇ ɪssᴜᴇ!!</b>'))
+    UPDATES_CHANNEL = str(getenv('UPDATES_CHANNEL', 'movierulzking'))
+    BANNED_CHANNELS = list(set(int(x) for x in str(getenv("BANNED_CHANNELS", "")).split()))
+    BAN_CHNL = list(set(int(x) for x in str(getenv("BAN_CHNL", "")).split()))
+    BAN_ALERT = str(getenv('BAN_ALERT', '<b>ʏᴏᴜʀ ᴀʀᴇ ʙᴀɴɴᴇᴅ ᴛᴏ ᴜsᴇ ᴛʜɪs ʙᴏᴛ.Pʟᴇᴀsᴇ ᴄᴏɴᴛᴀᴄᴛ @bmw_contact_bot ᴛᴏ ʀᴇsᴏʟᴠᴇ ᴛʜᴇ ɪssᴜᴇ!!</b>'))
