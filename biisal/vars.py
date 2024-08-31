@@ -30,7 +30,7 @@ class Var(object):
         APP_NAME = str(getenv('APP_NAME'))  # dont need to fill anything here
     else:
         ON_HEROKU = False
-    FQDN = "web-3crir7qcd23c.up-de-fra1-k8s-1.apps.run-on-seenode.com"
+    FQDN = "file-stream-pro.koyeb.app"
     HAS_SSL = bool(getenv('HAS_SSL', True))
     if HAS_SSL:
         URL = "https://{}/".format(FQDN)
